@@ -29,7 +29,8 @@ h3 {
 button {
   padding: 10px;
   font-size: 1.3rem;
-  margin-right: 7px;
+  margin-right: 5px;
+  margin-top: 5px;
 }
 
 .card-grid {
