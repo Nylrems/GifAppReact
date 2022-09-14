@@ -7,7 +7,7 @@ export const AddCategory = () => {
     const onInputChange = ({ target }) => {
         setInputValue(target.value);
     }
-
+//Pruebas
     const onSubmit = (event) => {
         event.preventDefault();
         console.log(inputValue);
