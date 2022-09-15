@@ -1,16 +1,21 @@
-import { useState } from "react"
+import { useState } from "react";
+import { GifApp } from "./GifApp";
 
-export const AddCategory = () => {
+export const AddCategory = ({ setCategories }) => {
 
     const [inputValue, setInputValue] = useState('');
 
     const onInputChange = ({ target }) => {
         setInputValue(target.value);
     }
-//Pruebas
+
+    //Pruebas
     const onSubmit = (event) => {
         event.preventDefault();
-        console.log(inputValue);
+        if (inputValue.trim().length <= 1) return;
+        
+        setCategories(categies => [inputValue, ...categies]);
+        setInputValue('');
     }
 
     return (
@@ -19,7 +24,7 @@ export const AddCategory = () => {
                 type='text'
                 placeholder="Buscar Gif"
                 value={inputValue}
-                onChange={(event) => onInputChange(event)}
+                onChange={onInputChange}
             />
         </form>
     )

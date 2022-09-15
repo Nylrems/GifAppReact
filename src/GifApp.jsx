@@ -5,23 +5,23 @@ import { AddCategory } from "./AddCategory";
 export const GifApp = () => {
 
     const array = ['Dragon Ball Z', 'One Piece'];
+
     const [categories, setCategories] = useState(array)
 
-    const newCate = 'The Evil Within'
-    
-    const onAddCategory = () => {
-        setCategories([newCate, ...categories ]);
-        console.log(array); 
-    }
+    //? Para usar el btn
+    // const onAddCategory = () => {
+    //     setCategories(['Prueba', ...categories ]);
+    //     console.log(array); 
+    // }
     
     console.log(categories);
     return (
         <>
             <h1>GifApp</h1>
 
-            <AddCategory/>
+            <AddCategory setCategories={setCategories}/>
 
-            <button onClick={onAddCategory}>Agregar</button>
+            {/* <button onClick={onAddCategory}>Agregar</button> */}
             <ol>
                 {
                     categories.map(category => {
